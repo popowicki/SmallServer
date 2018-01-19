@@ -45,15 +45,7 @@
     },
     "_artifactsLocation": {
       "type": "string",
-      "metadata": {
-        "description": "Auto-generated container in staging storage account to receive post-build staging folder upload"
-      }
-    },
-    "_artifactsLocationSasToken": {
-      "type": "securestring",
-      "metadata": {
-        "description": "Auto-generated token to access _artifactsLocation"
-      }
+      "defaultValue": "https://github.com/popowicki/SmallServer/blob/master/SmallServer/DSC/IISConfig.zip"
     }
   },
   "variables": {
@@ -63,9 +55,7 @@
     "WindowsServerVnetID": "[resourceId('Microsoft.Network/virtualNetworks', 'servers-vnet')]",
     "WindowsServerSubnetRef": "[concat(variables('WindowsServerVnetID'), '/subnets/', parameters('servers-vnetSubnet1Name'))]",
     "WindowsServerStorageAccountContainerName": "vhds",
-    "WindowsServerNicName": "[concat(parameters('WindowsServerName'), 'NetworkInterface')]",
-    "IISConfigArchiveFolder": "DSC",
-    "IISConfigArchiveFileName": "IISConfig.zip"},
+    "WindowsServerNicName": "[concat(parameters('WindowsServerName'), 'NetworkInterface')]"},
   "resources": [
     {
       "name": "servers-vnet",
@@ -185,7 +175,7 @@
             "autoUpgradeMinorVersion": true,
             "settings": {
               "configuration": {
-                "url": "[concat(parameters('_artifactsLocation'), '/', variables('IISConfigArchiveFolder'), '/', variables('IISConfigArchiveFileName'))]",
+                "url": "[parameters('_artifactsLocation')]",
                 "script": "IISConfig.ps1",
                 "function": "Main"
               },
@@ -193,9 +183,7 @@
                 "nodeName": "[parameters('WindowsServerName')]"
               }
             },
-            "protectedSettings": {
-              "configurationUrlSasToken": "[parameters('_artifactsLocationSasToken')]"
-            }
+            "protectedSettings": { }
           }
         }
       ]
