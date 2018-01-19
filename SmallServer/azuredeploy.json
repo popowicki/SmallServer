@@ -45,7 +45,7 @@
     },
     "_artifactsLocation": {
       "type": "string",
-      "defaultValue": "https://github.com/popowicki/SmallServer/blob/master/SmallServer/DSC/IISConfig.zip"
+      "defaultValue": "https://raw.githubusercontent.com/popowicki/SmallServer/master/SmallServer/DSC/IISConfig.zip"
     }
   },
   "variables": {
