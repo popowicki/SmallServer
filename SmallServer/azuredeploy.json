@@ -214,6 +214,22 @@
               "sourceAddressPrefixes": [],
               "destinationAddressPrefixes": []
             }
+          },
+          {
+            "name": "AllowHttp",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 200,
+              "direction": "Inbound",
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
           }
         ],
         "defaultSecurityRules": [
