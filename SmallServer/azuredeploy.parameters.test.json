@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "WindowsServerName": {
+      "value": "WinServer2"
+    },
+    "WindowsServerAdminUserName": {
+      "value": "LabAdmin"
+    },
+    "WindowsServerAdminPassword": {
+      "value": "P@ssw0rd1234"
+    },
+    "WindowsServerWindowsOSVersion": {
+      "value": "2016-Datacenter"
+    },
+    "WindowsServerVmSize": {
+      "value": "Standard_E2s_v3"
+    },
+    "servers-vnetPrefix": {
+      "value": "10.0.0.0/16"
+    },
+    "servers-vnetSubnet1Name": {
+      "value": "Subnet-1"
+    },
+    "servers-vnetSubnet1Prefix": {
+      "value": "10.0.0.0/24"
+    }
+  }
+}
