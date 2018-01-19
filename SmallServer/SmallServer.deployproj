@@ -32,7 +32,7 @@
       <Visible>False</Visible>
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
-    <Content Include="DSC\IISConfig.ps1" />
+    <None Include="DSC\IISConfig.ps1" />
     <None Include="DSC\IISConfig.zip" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
